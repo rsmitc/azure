@@ -35,6 +35,17 @@
       "type": "string",
       "defaultValue": "latest",
       "allowedValues": [
+        "6.2.0",
+        "6.2.2",
+        "6.2.4",
+        "6.2.5",
+        "6.4.0",
+        "6.4.2",
+        "6.4.3",
+        "6.4.5",
+        "6.4.6",
+        "6.4.7",
+        "6.4.8",
         "7.0.0",
         "7.0.1",
         "7.0.2",
@@ -186,14 +197,14 @@
     },
     "subnet1Prefix": {
       "type": "string",
-      "defaultValue": "10.1.1.0/26",
+      "defaultValue": "10.1.0.0/26",
       "metadata": {
         "description": "Subnet 1 Prefix"
       }
     },
     "subnet1StartAddress": {
       "type": "string",
-      "defaultValue": "10.1.1.4",
+      "defaultValue": "10.1.0.4",
       "metadata": {
         "description": "Subnet 1 start address, 2 consecutive private IPs are required"
       }
@@ -207,14 +218,14 @@
     },
     "subnet2Prefix": {
       "type": "string",
-      "defaultValue": "10.1.1.64/26",
+      "defaultValue": "10.1.0.64/26",
       "metadata": {
         "description": "Subnet 2 Prefix"
       }
     },
     "subnet2StartAddress": {
       "type": "string",
-      "defaultValue": "10.1.1.68",
+      "defaultValue": "10.1.0.68",
       "metadata": {
         "description": "Subnet 2 start address, 2 consecutive private IPs are required"
       }
@@ -339,13 +350,13 @@
     "fgbCustomData": "[base64(if(equals(parameters('fortiGateLicenseBYOLB'),''),variables('fgbCustomDataBody'),variables('fgbCustomDataCombined')))]",
     "routeTable3Name": "[concat(parameters('fortiGateNamePrefix'),'-RouteTable-',parameters('subnet3Name'))]",
     "routeTable3Id": "[resourceId('Microsoft.Network/routeTables',variables('routeTable3Name'))]",
-    "fgaNic1Name": "[concat(variables('fgaVmName'),'-NIC01')]",
+    "fgaNic1Name": "[concat(variables('fgaVmName'),'-Nic01')]",
     "fgaNic1Id": "[resourceId('Microsoft.Network/networkInterfaces',variables('fgaNic1Name'))]",
-    "fgaNic2Name": "[concat(variables('fgaVmName'),'-NIC02')]",
+    "fgaNic2Name": "[concat(variables('fgaVmName'),'-Nic02')]",
     "fgaNic2Id": "[resourceId('Microsoft.Network/networkInterfaces',variables('fgaNic2Name'))]",
-    "fgbNic1Name": "[concat(variables('fgbVmName'),'-NIC01')]",
+    "fgbNic1Name": "[concat(variables('fgbVmName'),'-Nic01')]",
     "fgbNic1Id": "[resourceId('Microsoft.Network/networkInterfaces',variables('fgbNic1Name'))]",
-    "fgbNic2Name": "[concat(variables('fgbVmName'),'-NIC02')]",
+    "fgbNic2Name": "[concat(variables('fgbVmName'),'-Nic02')]",
     "fgbNic2Id": "[resourceId('Microsoft.Network/networkInterfaces',variables('fgbNic2Name'))]",
     "serialConsoleStorageAccountName": "[concat('console', uniquestring(resourceGroup().id))]",
     "serialConsoleStorageAccountType": "Standard_LRS",
