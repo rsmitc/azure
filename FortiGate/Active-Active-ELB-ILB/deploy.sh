@@ -134,7 +134,7 @@ query="[?virtualMachine.name.starts_with(@, '$prefix')].{virtualMachine:virtualM
 az vm list-ip-addresses --query "$query" --output tsv
 echo "
  IP Public Azure Load Balancer:"
-publicIpIds=$(az network lb show -g "$rg" -n "$prefix-ExternalLoadBalancer" --query "frontendIpConfigurations[].publicIpAddress.id" --out tsv)
+publicIpIds=$(az network lb show -g "$rg" -n "$prefix-ELB01" --query "frontendIpConfigurations[].publicIpAddress.id" --out tsv)
 while read publicIpId; do
     az network public-ip show --ids "$publicIpId" --query "{ ipAddress: ipAddress, fqdn: dnsSettings.fqdn }" --out tsv
 done <<< "$publicIpIds"
