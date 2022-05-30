@@ -1,0 +1,6 @@
+config system auto-scale
+    set status enable
+    set role primary
+    set sync-interface "port2"
+    set psksecret "a big secret"
+end

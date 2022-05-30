@@ -1,0 +1,6 @@
+config system auto-scale
+    set status enable
+    set sync-interface "port2"
+    set primary-ip 10.1.0.69
+    set psksecret "a big secret"
+end
